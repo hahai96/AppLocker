@@ -16,7 +16,7 @@ import com.example.ha_hai.applocker.model.App;
 import java.util.List;
 
 /**
- * Created by ha_hai on 6/29/2018.
+ * Created by ha_hai on 8/03/2018.
  */
 
 public class ListAppAdapter extends RecyclerView.Adapter<ListAppAdapter.MyHolder> {

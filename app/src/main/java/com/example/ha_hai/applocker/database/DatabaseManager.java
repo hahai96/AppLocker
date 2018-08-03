@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import com.example.ha_hai.applocker.model.App;
 
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ha_hai on 6/30/2018.
+ * Created by ha_hai on 8/03/2018.
  */
 
 public class DatabaseManager extends SQLiteOpenHelper {
@@ -32,13 +31,10 @@ public class DatabaseManager extends SQLiteOpenHelper {
     public DatabaseManager(Context context) {
         super(context, DATABASE_NAME, null, VERSION);
         this.mContext = context;
-        Log.d("AAA", "DatabaseManager");
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.d("AAA", "onCreate: DatabaseManager");
-
         String sqlQuery = "CREATE TABLE " + TABLE_NAME + " (" +
                 ID + " integer primary key, " +
                 NAME + " TEXT, " +
@@ -50,8 +46,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        Log.d("AAA", "onUpgrade: DatabaseManager");
-
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }

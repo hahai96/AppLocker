@@ -3,7 +3,7 @@ package com.example.ha_hai.applocker.model;
 import android.graphics.drawable.Drawable;
 
 /**
- * Created by ha_hai on 6/29/2018.
+ * Created by ha_hai on 8/03/2018.
  */
 
 public class App {
