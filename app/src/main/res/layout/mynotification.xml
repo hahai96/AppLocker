@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="12dp">
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quá khứ anh xin lỗi"
+        android:textSize="18sp"
+        android:textColor="#201f1f"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/txtCaSi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Khánh Phương"
+        android:layout_below="@id/txtName"
+        android:textSize="14sp"
+        android:textColor="#565555"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <ImageButton
+        android:id="@+id/btnPre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/skip_48"
+        android:layout_toRightOf="@id/txtName"
+        android:background="#00000000"
+        android:layout_marginLeft="30dp"/>
+
+    <ImageButton
+        android:id="@+id/btnPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pause"
+        android:background="#00000000"
+        android:layout_toRightOf="@id/btnPre"
+        android:layout_marginLeft="12dp"/>
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_toRightOf="@id/btnPause"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group
+        android:id="@+id/group"
+        android:checkableBehavior="single">
+
+        <item android:id="@+id/itAll"
+            android:title="All"
+            android:checked="true"/>
+
+        <item android:id="@+id/itOn"
+            android:title="On"/>
+
+        <item android:id="@+id/itOff"
+            android:title="Off"/>
+    </group>
+</menu>
