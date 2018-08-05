@@ -113,15 +113,18 @@ public class MyService extends Service {
                     currentApp = mySortedMap.get(mySortedMap.lastKey()).getPackageName();
                 }
             }
+
             Log.d("AAA", "Current App in foreground is: " + currentApp);
-            checkMyApp(currentApp);
+            if (currentApp != null)
+                checkMyApp(currentApp);
         }
         else {
-
             ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
             String mm=(manager.getRunningTasks(1).get(0)).topActivity.getPackageName();
             Log.d("AAA", "Current App in foreground is: " + mm);
-            checkMyApp(mm);
+
+            if (mm != null)
+                checkMyApp(mm);
         }
     }
 

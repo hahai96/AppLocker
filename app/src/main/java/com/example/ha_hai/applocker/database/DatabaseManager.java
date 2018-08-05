@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import com.example.ha_hai.applocker.model.App;
 
@@ -72,17 +73,22 @@ public class DatabaseManager extends SQLiteOpenHelper {
     }
 
     public App getAppByPackageName(String packageName) {
+        Log.d("AAA", "packageName: " + packageName);
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_NAME, new String[]{ID,
                         NAME, PACKAGE_NAME, STATE}, PACKAGE_NAME + "=?",
                 new String[]{packageName}, null, null, null, null);
-        if (cursor != null)
+        if (cursor != null) {
             cursor.moveToFirst();
 
-        App student = new App(null, cursor.getString(1), cursor.getString(2), cursor.getInt(3), cursor.getInt(3));
-        cursor.close();
-        db.close();
-        return student;
+            App student = new App(null, cursor.getString(1), cursor.getString(2), cursor.getInt(3), cursor.getInt(3));
+            cursor.close();
+            db.close();
+
+            return student;
+        }
+
+        return null;
     }
 
     public int getAppsCount() {
@@ -98,7 +104,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     public void deleteApp(App app) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_NAME, PACKAGE_NAME + " = ?",
-                new String[] {app.getPackageName()});
+                new String[]{app.getPackageName()});
         db.close();
     }
 
